@@ -1,0 +1,59 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "State",
+"class": "AwakeMonsterState",
+"language": "GDScript",
+"path": "res://fsm_example/scripts/monster/states/awake.gd"
+}, {
+"base": "State",
+"class": "FlyMonsterState",
+"language": "GDScript",
+"path": "res://fsm_example/scripts/monster/states/fly.gd"
+}, {
+"base": "StateMachine",
+"class": "MonsterFSM",
+"language": "GDScript",
+"path": "res://fsm_example/scripts/monster/monster_fsm.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://addons/kane-FSM/state.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://addons/kane-FSM/state_machine.gd"
+}, {
+"base": "State",
+"class": "WaitMonsterState",
+"language": "GDScript",
+"path": "res://fsm_example/scripts/monster/states/wait.gd"
+} ]
+_global_script_class_icons={
+"AwakeMonsterState": "",
+"FlyMonsterState": "",
+"MonsterFSM": "",
+"State": "",
+"StateMachine": "res://addons/kane-FSM/fsm_icon.svg",
+"WaitMonsterState": ""
+}
+
+[application]
+
+config/name="godot-kane-fsm"
+run/main_scene="res://fsm_example/Node.tscn"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "kane-FSM" )

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fsm_example/assets/9515-uncooked-dry-yellow-fusilli-pasta-pv.jpg" type="Texture" id=1]
+[ext_resource path="res://fsm_example/monster.tscn" type="PackedScene" id=2]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.5
+bounce = 1.0
+absorbent = true
+
+[node name="Node" type="Node"]
+
+[node name="9515-uncooked-dry-yellow-fusilli-pasta-pv" type="Sprite" parent="."]
+modulate = Color( 0.466667, 0.462745, 0.462745, 1 )
+position = Vector2( 510, 290 )
+scale = Vector2( 1.12735, 1.03448 )
+texture = ExtResource( 1 )
+
+[node name="monster" parent="." instance=ExtResource( 2 )]
+position = Vector2( 452.519, 274.018 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PoolVector2Array( 13.5481, 13.4388, 1014.42, 13.4388, 1015.93, 587.736, 6.01135, 592.258, 7.51871, 28.5122, -19.6134, 40.5709, -24.1355, 608.838, 1058.14, 614.868, 1037.03, -40.8255, -39.2089, -39.3181, -51.8846, 25.2419, 7.97314, 27.2858 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 30.0
+margin_right = 60.0
+margin_bottom = 44.0
+text = "Use the arrow keys.
+Alt + f4 to close."
